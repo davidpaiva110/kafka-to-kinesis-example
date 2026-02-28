@@ -1,0 +1,50 @@
+[versions]
+scala = "3.7.3"
+pekko = "1.2.0"
+jsoniter-scala = "2.38.0"
+pekko-http-jsoniter-scala = "3.3.0"
+iron = "3.2.0"
+
+slf4j = "2.0.17"
+logback = "1.5.20"
+munit = "1.1.1"
+junit-vintage-engine = "5.9.2"
+junit-platform-launcher = "1.10.2"
+
+opentelemetry = "1.54.1"
+opentelemetry-semconv = "1.37.0"
+opentelemetry-instrumentation = "2.20.1-alpha"
+
+
+[libraries]
+pekko-http = { module = "org.apache.pekko:pekko-http_3", version.ref = "pekko" }
+pekko-actor-typed = { module = "org.apache.pekko:pekko-actor-typed_3", version.ref = "pekko" }
+pekko-stream-typed = { module = "org.apache.pekko:pekko-stream-typed_3", version.ref = "pekko" }
+pekko-actor-testkit-typed = { module = "org.apache.pekko:pekko-actor-testkit-typed_3", version.ref = "pekko" }
+pekko-stream-testkit = { module = "org.apache.pekko:pekko-stream-testkit_3", version.ref = "pekko" }
+pekko-http-testkit = { module = "org.apache.pekko:pekko-http-testkit_3", version.ref = "pekko" }
+jsoniter-scala = { module = "com.github.plokhotnyuk.jsoniter-scala:jsoniter-scala-core_3", version.ref = "jsoniter-scala" }
+jsoniter-scala-macros = { module = "com.github.plokhotnyuk.jsoniter-scala:jsoniter-scala-macros_3", version.ref = "jsoniter-scala" }
+jsoniter-scala-pekko-http = { module = "com.github.pjfanning:pekko-http-jsoniter-scala_3", version.ref = "pekko-http-jsoniter-scala" }
+iron-jsoniter = { module = "io.github.iltotore:iron-jsoniter_3", version.ref = "iron" }
+slf4j-api = { module = "org.slf4j:slf4j-api", version.ref = "slf4j" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+munit = { module = "org.scalameta:munit_3", version.ref = "munit" }
+munit-junit-interface = { module = "org.scalameta:junit-interface", version.ref = "munit" }
+junit-vintage-engine = { module = "org.junit.vintage:junit-vintage-engine", version.ref = "junit-vintage-engine" }
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher", version.ref = "junit-platform-launcher" }
+opentelemetry-semconv = { module = "io.opentelemetry.semconv:opentelemetry-semconv", version.ref = "opentelemetry-semconv" }
+opentelemetry-runtime-metrics = { module = "io.opentelemetry.instrumentation:opentelemetry-runtime-telemetry-java17", version.ref = "opentelemetry-instrumentation" }
+opentelemetry-logback-appender = { module = "io.opentelemetry.instrumentation:opentelemetry-logback-appender-1.0", version.ref = "opentelemetry-instrumentation" }
+opentelemetry-sdk-autoconfigure = { module = "io.opentelemetry:opentelemetry-sdk-extension-autoconfigure", version.ref = "opentelemetry" }
+opentelemetry-exporter-otlp = { module = "io.opentelemetry:opentelemetry-exporter-otlp", version.ref = "opentelemetry" }
+
+
+[bundles]
+pekko = ["pekko-http", "pekko-actor-typed", "pekko-stream-typed"]
+pekko-testkit = ["pekko-actor-testkit-typed", "pekko-stream-testkit", "pekko-http-testkit"]
+jsoniter = ["jsoniter-scala", "jsoniter-scala-macros", "iron-jsoniter", "jsoniter-scala-pekko-http"]
+logging = ["slf4j-api", "logback-classic"]
+munit = ["munit", "munit-junit-interface"]
+junit-launcher = ["junit-vintage-engine", "junit-platform-launcher"]
+opentelemetry = ["opentelemetry-semconv", "opentelemetry-logback-appender", "opentelemetry-sdk-autoconfigure", "opentelemetry-runtime-metrics", "opentelemetry-exporter-otlp"]
