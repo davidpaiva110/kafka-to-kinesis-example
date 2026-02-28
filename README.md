@@ -118,13 +118,13 @@ pip install -r ./scripts/requirements.txt
 ```
 
 
-### 1. Produce messages to Kafka
+### 2. Produce messages to Kafka
 Execute the script to produce test messages:
 ```bash
 python ./scripts/kafka_producer.py
 ```
 
-### 2. Verify Kinesis output
+### 3. Verify Kinesis output
 Read from Kinesis stream using the script:
 ```bash
 python ./scripts/kinesis_consumer.py
